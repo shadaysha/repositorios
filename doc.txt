@@ -1,0 +1,80 @@
+1.CORS
+Nombre completo: cors (Cross-Origin Resource Sharing)
+
+¿Qué hace? Permite que tu servidor acepte peticiones desde otros dominios distintos al propio.
+
+Ejemplo de uso:
+Si tienes tu backend en api.midominio.com y tu frontend en www.midominio.com, por seguridad el navegador bloquea la comunicación entre ellos. La librería cors permite que eso sí sea posible de manera controlada.
+
+Código de ejemplo:
+
+const cors = require('cors');
+app.use(cors());
+
+
+2. Express
+
+Nombre completo: express
+
+¿Qué hace? Es un framework para Node.js que facilita la creación de servidores web y APIs REST.
+
+Ventajas:
+
+Fácil manejo de rutas.
+
+Middleware para procesamiento de solicitudes.
+
+Ligero y muy popular.
+
+
+Código de ejemplo:
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hola Mundo');
+});
+
+
+3. Mongoose
+
+Nombre completo: mongoose
+
+¿Qué hace? Es una librería ODM (Object Data Modeling) para MongoDB. Sirve para:
+
+Conectar tu app con la base de datos MongoDB.
+
+Crear modelos (esquemas) de datos.
+
+Validar, guardar y consultar documentos de forma estructurada.
+
+
+Código de ejemplo:
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/miBD');
+
+const Usuario = mongoose.model('Usuario', {
+  nombre: String,
+  edad: Number
+});
+
+
+4. Dotenv
+
+Nombre completo: dotenv
+
+¿Qué hace? Permite cargar variables de entorno desde un archivo .env al entorno de Node.js.
+
+Uso común: almacenar claves secretas, contraseñas, URLs de conexión, etc., sin ponerlas en el código.
+
+Archivo .env:
+
+PORT=3000
+DB_URL=mongodb://localhost/miBD
+
+Código de ejemplo:
+
+require('dotenv').config();
+console.log(process.env.PORT); // Imprime 3000
